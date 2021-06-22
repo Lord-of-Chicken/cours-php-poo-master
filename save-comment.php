@@ -76,4 +76,4 @@ $query->execute(compact('author', 'content', 'article_id'));
 // 4. Redirection vers l'article en question :
 
 
-redirect ('article.php?id=' . $article_id);
+redirect('article.php?id=' . $article_id);

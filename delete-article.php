@@ -1,6 +1,6 @@
 <?php
-require_once('libraries/database.php');
-require_once('libraries/utils.php');
+require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
 /**
  * DANS CE FICHIER, ON CHERCHE A SUPPRIMER L'ARTICLE DONT L'ID EST PASSE EN GET
  * 
@@ -31,18 +31,15 @@ $pdo = getPdo();
 /**
  * 3. Vérification que l'article existe bel et bien
  */
-$query = $pdo->prepare('SELECT * FROM articles WHERE id = :id');
-$query->execute(['id' => $id]);
-if ($query->rowCount() === 0) {
+$article = findArticle($id);
+if (!$article) {
     die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
 }
 
 /**
  * 4. Réelle suppression de l'article
  */
-$query = $pdo->prepare('DELETE FROM articles WHERE id = :id');
-$query->execute(['id' => $id]);
-
+deleteArticle($id);
 /**
  * 5. Redirection vers la page d'accueil
  */

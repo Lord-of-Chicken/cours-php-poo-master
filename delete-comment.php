@@ -32,8 +32,7 @@ $pdo = getPdo();
 /**
  * 3. Vérification de l'existence du commentaire
  */
-$query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
-$query->execute(['id' => $id]);
+
 if ($query->rowCount() === 0) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
