@@ -1,9 +1,9 @@
 <?php
 
 /**
-* retourne ubne connexion à la base de données
-* @return PDO
-*/
+ * retourne ubne connexion à la base de données
+ * @return PDO
+ */
 
 function getPdo(): PDO
 {

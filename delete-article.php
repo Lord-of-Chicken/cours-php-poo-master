@@ -1,6 +1,6 @@
 <?php
 require_once('libraries/database.php');
-
+require_once('libraries/utils.php');
 /**
  * DANS CE FICHIER, ON CHERCHE A SUPPRIMER L'ARTICLE DONT L'ID EST PASSE EN GET
  * 
@@ -46,5 +46,5 @@ $query->execute(['id' => $id]);
 /**
  * 5. Redirection vers la page d'accueil
  */
-header("Location: index.php");
-exit();
+
+redirect("index.php");
