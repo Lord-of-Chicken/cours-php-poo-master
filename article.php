@@ -65,4 +65,6 @@ $commentaires = $query->fetchAll();
  * 5. On affiche 
  */
 $pageTitle = $article['title'];
-render('articles/show');
+
+render('articles/show', compact('pageTitle', 'article', 'commentaires', 'article_id'));
+  
