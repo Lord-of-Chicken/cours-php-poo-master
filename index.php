@@ -6,22 +6,6 @@
  * On va donc se connecter à la base de données, récupérer les articles du plus récent au plus ancien (SELECT * FROM articles ORDER BY created_at DESC)
  * puis on va boucler dessus pour afficher chacun d'entre eux
  */
-require_once 'libraries/database.php';
-require_once 'libraries/utils.php';
-require_once 'libraries/models/Article.php';
-require_once 'libraries/models/User.php';
-
-
-
-$models = new Article();
-/**
- * 2. Récupération des articles
- */
-$articles = $models->findAll("created_at DESC");
-
-
-/**
- * 3. Affichage
- */
-$pageTitle = "Accueil";
-render('articles/index', compact('pageTitle', 'articles'));
+require_once 'libraries/controllers/Article.php';
+$controllers = new \Controllers\Article();
+$controllers->index();
