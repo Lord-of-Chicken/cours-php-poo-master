@@ -13,9 +13,3 @@ function getPdo(): PDO
     ]);
     return $pdo;
 }
-
-/**
- * retourne la liste des articles classé par date de création 
- * @return array
- */
-
