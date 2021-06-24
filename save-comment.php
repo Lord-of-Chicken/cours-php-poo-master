@@ -1,4 +1,4 @@
  <?php
-require_once 'libraries/controllers/comment.php';
-$controllers = new \Controllers\Comment();
-$controllers->insert();
+    require_once 'libraries/autoload.php';
+    $controllers = new \Controllers\Comment();
+    $controllers->insert();

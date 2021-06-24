@@ -1,12 +1,10 @@
 <?php
 namespace Models;
 
-require_once 'libraries/models/Model.php';
 
 class Comment extends Model
 {
     protected $table = "comments";
-
 
     public function findAllWithArticle(int $article_id): array
     {
