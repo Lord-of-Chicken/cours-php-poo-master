@@ -7,5 +7,4 @@
  * puis on va boucler dessus pour afficher chacun d'entre eux
  */
 require_once 'libraries/autoload.php';
-$controllers = new \Controllers\Article();
-$controllers->index();
+\Application::process();

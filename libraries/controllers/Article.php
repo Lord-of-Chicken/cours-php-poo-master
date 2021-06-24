@@ -46,6 +46,6 @@ class Article extends Controller
             die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
         }
         $this->model->delete($id);
-        redirect("index.php");
+        \Http::redirect("index.php");
     }
 }
