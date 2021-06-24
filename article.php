@@ -1,4 +1,4 @@
 <?php
 require_once 'libraries/autoload.php';
-$controllers = new \Controllers\Article();
+$controllers = new \controllers\Article();
 $controllers->show();

@@ -1,6 +1,9 @@
 <?php
-// article('articles/show')
-function render(string $path, array $variables = [])
+
+class Renderer{
+
+    // article('articles/show')
+public static function render(string $path, array $variables = [])
 {
     extract($variables);
 
@@ -10,9 +13,4 @@ function render(string $path, array $variables = [])
 
     require('templates/layout.html.php');
 }
-
-function redirect(string $url): void
-{
-    header("Location: $url");
-    exit();
 }

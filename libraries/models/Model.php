@@ -1,16 +1,16 @@
 <?php
+
 namespace Models;
 
-require_once 'libraries/database.php';
-
-abstract class Model{
+abstract class Model
+{
 
     protected $pdo;
     protected $table;
 
     public function __construct()
     {
-        $this->pdo = getPdo();
+        $this->pdo = \Database::getPdo();
     }
 
     public function find(int $id)
@@ -32,12 +32,11 @@ abstract class Model{
     {
         $sql = "SELECT * FROM {$this->table}";
 
-        if($order){
+        if ($order) {
             $sql .= " ORDER BY " . $order;
         }
         $resultats = $this->pdo->query($sql);
         $articles = $resultats->fetchAll();
         return $articles;
     }
-
 }
